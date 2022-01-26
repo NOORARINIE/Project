@@ -1,94 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
-<title>Admin | Edit News</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="zxx">
 
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="assets/css/vendor.css">
-<link rel="stylesheet" href="assets/css/style.css">
-<link rel="stylesheet" href="assets/css/responsive.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SportSnooze | Admin</title>
 
+    <!-- favicon -->
+    <link rel=icon href="assets/img/favicon.png" sizes="20x20" type="image/png">
 
-<style>
-    body {
-        font-family: "Lato", sans-serif
-    }
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    .bgimg {
-        background-image: url('assets/img/football2.jpg');
-        background-size: cover;
-        background-position: center;
-        min-height: 100%;
-    }
-</style>
+    <link rel="stylesheet" href="assets/css/vendor.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
 
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+            background-image: url('assets/grey.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 100%;
+        }
 
-<body>
+        input[type=text], select, textarea {
+            width: 100%; /* Full width */
+            padding: 12px; /* Some padding */ 
+            border: 1px solid #ccc; /* Gray border */
+            border-radius: 4px; /* Rounded borders */
+            box-sizing: border-box; /* Make sure that padding and width stays in place */
+            margin-top: 6px; /* Add a top margin */
+            margin-bottom: 16px; /* Bottom margin */
+            resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+        }
 
+        /* Style the submit button with a specific background color etc */
+        input[type=submit] {
+            background-color: #000000;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* When moving the mouse over the submit button, add a darker green color */
+        input[type=submit]:hover {
+            
+        }
+
+        /* Add a background color and some padding around the form */
+        .container {
+            border-radius: 5px;
+            background-color: grey;
+            padding: 20px;
+        }
+
+        .button1 {
+            background-color: #000000;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+
+    </style>
+
+</head>
+
+    <body>
     <!-- Navbar -->
-    <div class="w3-top bgimg">
         <div class="w3-bar w3-black w3-card ">
-
+            <a href="/" style="padding: 8px; float: right"><button class="button1">Logout</button></a>
             <a class="w3-bar-item w3-padding-large " style="font-size:25px;">SPORTSnooze! </a>
-            <a href="#" class="w3-bar-item w3-button w3-padding-large " style="font-size:25px;">Home</a>
-            <a href="livescore-list" class="w3-bar-item w3-button w3-padding-large " style="font-size:25px;">LIVE Score</a>
-            <a href="highlights-list" class="w3-bar-item w3-button w3-padding-large " style="font-size:25px;">Highlights</a>
-            <a href="news-list" class="w3-bar-item w3-button w3-padding-large " style="font-size:25px;">News</a>
-            <a href="myaccount-list" class="w3-bar-item w3-button w3-padding-large " style="font-size:25px;">My Account</a>
 
-            <a class="w3-padding-large w3-right" style="font-size:25px;">Admin</a>
-        </div>
-        <br><br>
-        <br><br>
-        <!-- LIVE Score -->
-        <div class="container w3-dark-grey " style="padding:20px;">
-            <div class="container w3-black" style="padding:20px;">
-                <h5>News Management
-                </h5>
-                <div class="w3-display-container w3-dark-grey" style="height:auto;">
-                    <div>
-                        <table class="table">
-                            <thead>
-                                <tr class="w3-padding w3-card-4 w3-red">
-                                    <th>News</th>
-                                    <th>Title</th>
-                                    <th>Picture</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <form class="form" action="{{route('update.news')}}" method="POST">
-                                    @if(Session::has('news_update'))
-                                    <span class="alert alert-success"> {{Session::get('news_update')}}</span>
-                                    @endif
-                                    @csrf
-                                    <input type="hidden" name="id" value="{{$news->id}}">
-                                    <tr>
-                                        <td>
-                                            <input class="form-control" type="text" name="news" value="{{$news->news}}" />
-                                        </td>
-                                        <td>
-                                            <input class="form-control" type="text" name="title" value="{{$news->title}}" />
-                                        </td>
-                                        <td>
-                                            <input class="form-control" type="file" name="picture" value="{{$news->picture}}" />
-                                        </td>
-                                        <td>
-                                            <div class="btn-group" role="group">
-                                                <button class=" fa fa-check" type="submit" style="background-color: Green; color: white; margin: 5px"></button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </form>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-</body>
+            
+        </div>    
+    <!-- Navbar -->
+
+    <br><br>
+    
+   
+
+
+   
+
+
+    <div class="container">
+        
+        
+        <form action="{{route('update.news')}}" method="POST">
+            @csrf
+            <input type="hidden" name="id" value="{{$new->id}}">
+            URL <input type ="text" name="url" value="{{$new->url}}">
+            <br>
+            Inner Caption <input type ="text" name="innercaption" value="{{$new->innercaption}}">
+            <br>
+            Outer Caption <input type ="text" name="outercaption" value="{{$new->outercaption}}">
+            <br>
+            Date <input type ="text" name="date" value="{{$new->date}}">
+
+            <input type="submit" value="Submit">
+
+        </form>
+        <br>
+        
+        
+   
+        
+    </div>
+
+    
+     </body>
 
 </html>

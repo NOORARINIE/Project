@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Highlights extends Model
 {
     use HasFactory;
-    protected $table ="highlights";
+    protected $table = "highlights";
 }

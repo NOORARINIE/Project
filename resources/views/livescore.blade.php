@@ -15,10 +15,11 @@
 
 <style>
   body {
-    font-family: "Lato", sans-serif
+    font-family: "Lato", sans-serif;
+
   }
 
-
+  
 
   .bgimg {
     background-image: url('assets/img/football2.jpg');
@@ -26,6 +27,17 @@
     background-position: center;
     min-height: 100%;
   }
+
+  .button1 {
+            background-color: #000000;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        
 </style>
 
 
@@ -35,52 +47,34 @@
   <div class="w3-top bgimg">
     <div class="w3-bar w3-black w3-card ">
 
-      <a class="w3-bar-item w3-padding-large " style="font-size:25px;">SPORTSnooze! </a>
-      <a href="#" class="w3-bar-item w3-button w3-padding-large " style="font-size:25px;">Home</a>
+    <a class="w3-bar-item w3-padding-large " style="font-size:25px;">SPORTSnooze! </a>
+      <a href="/" style="padding: 8px; float: right"><button class="button1">Logout</button></a>
+      <a href="homepage" class="w3-bar-item w3-button w3-padding-large " style="font-size:25px;">Home</a>
       <a href="livescore" class="w3-bar-item w3-button w3-padding-large " style="font-size:25px;">LIVE Score</a>
-      <a href="highlights" class="w3-bar-item w3-button w3-padding-large " style="font-size:25px;">Highlights</a>
-      <a href="news" class="w3-bar-item w3-button w3-padding-large " style="font-size:25px;">News</a>
-      <a href="myaccount" class="w3-bar-item w3-button w3-padding-large " style="font-size:25px;">My Account</a>
-
-
-      <a href="javascript:void(0)" class="w3-padding-large w3-right" style="font-size:25px;"><i class="fa fa-search"></i></a>
+      <a href="highlightspage" class="w3-bar-item w3-button w3-padding-large " style="font-size:25px;">Highlights</a>
+      <a href="newspage" class="w3-bar-item w3-button w3-padding-large " style="font-size:25px;">News</a>
+      <a href="profile" class="w3-bar-item w3-button w3-padding-large " style="font-size:25px;">My Account</a>
+      
     </div>
     <br><br>
-    <br><br>
+    
+    
     <!-- LIVE Score -->
-    <div class="container w3-dark-grey " style="padding:20px;">
-      <div class="container w3-black" style="padding:20px;">
-        <h5>Today Matches</h5>
-        <div class="w3-right-align ">Live Football Scores, Fixtures & Results</div>
-        <div class="w3-display-container w3-dark-grey" style="height:auto;">
+    <div class="container w3-dark-grey " style="padding:20px; height:500px;width:1000px">
+      <div class="container w3-black" style="padding:20px; ">
+      <h5>Today Matches</h5>
+      <div class="w3-right-align ">Live Football Scores, Fixtures & Results</div>
+      <div class="w3-display-container w3-dark-grey" style="height:auto;" >
 
-          <table>
-            <div class="w3-padding w3-card-4 w3-red">
-              <p1>PREMIER LEAGUE</p1>
-            </div>
-            <ul class="w3-ul w3-center ">
-              <li>Brentford 2 - 1 Aston Villa</li>
-              <li>Brentford 2 - 1 Aston Villa</li>
-              <li>Brentford 2 - 1 Aston Villa</li>
-            </ul>
-
-          </table>
-          <div class="w3-padding w3-card-4 w3-red">
-            <p1>LA LIGA</p1>
-          </div>
-          <ul class="w3-ul w3-center ">
-            <li>Elche 1 - 0 Villareal</li>
-            <li>Real Betis - 1 Alaves</li>
-            <li>Barcelona 2 - 1 Real Madrid</li>
-          </ul>
+      <center> <iframe style="height:500px;width:1000px"  src="https://www.livexscores.com/"> </iframe></center> 
 
 
 
-        </div>
       </div>
-    </div>
+    </div>  
+  </div>
 
-
+  
 
 
 </body>

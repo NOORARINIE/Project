@@ -1,7 +1,7 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'v8.6.10',
-        'version' => '8.6.10.0',
+        'pretty_version' => '1.0.0+no-version-set',
+        'version' => '1.0.0.0',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -19,6 +19,15 @@
             'reference' => '7a198ec737e926eab15d29368fc6fff66772b0e2',
             'dev_requirement' => false,
         ),
+        'bacon/bacon-qr-code' => array(
+            'pretty_version' => '2.0.4',
+            'version' => '2.0.4.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../bacon/bacon-qr-code',
+            'aliases' => array(),
+            'reference' => 'f73543ac4e1def05f1a70bcd1525c8a157a1ad09',
+            'dev_requirement' => false,
+        ),
         'brick/math' => array(
             'pretty_version' => '0.9.3',
             'version' => '0.9.3.0',
@@ -33,6 +42,15 @@
             'replaced' => array(
                 0 => '*',
             ),
+        ),
+        'dasprid/enum' => array(
+            'pretty_version' => '1.0.3',
+            'version' => '1.0.3.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../dasprid/enum',
+            'aliases' => array(),
+            'reference' => '5abf82f213618696dda8e3bf6f64dd042d8542b2',
+            'dev_requirement' => false,
         ),
         'davedevelopment/hamcrest-php' => array(
             'dev_requirement' => true,
@@ -92,6 +110,15 @@
             'install_path' => __DIR__ . '/../egulias/email-validator',
             'aliases' => array(),
             'reference' => '0dbf5d78455d4d6a41d186da50adc1122ec066f4',
+            'dev_requirement' => false,
+        ),
+        'fabpot/goutte' => array(
+            'pretty_version' => 'v4.0.2',
+            'version' => '4.0.2.0',
+            'type' => 'application',
+            'install_path' => __DIR__ . '/../fabpot/goutte',
+            'aliases' => array(),
+            'reference' => 'f51940fbe0db060bc4fc0b3f1d19bc4ff3054b17',
             'dev_requirement' => false,
         ),
         'facade/flare-client-php' => array(
@@ -395,8 +422,8 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => 'v8.6.10',
-            'version' => '8.6.10.0',
+            'pretty_version' => '1.0.0+no-version-set',
+            'version' => '1.0.0.0',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -582,6 +609,18 @@
             'aliases' => array(),
             'reference' => 'bae7c545bef187884426f042434e561ab1ddb182',
             'dev_requirement' => true,
+        ),
+        'php-http/async-client-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '*',
+            ),
+        ),
+        'php-http/client-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '*',
+            ),
         ),
         'phpdocumentor/reflection-common' => array(
             'pretty_version' => '2.2.0',
@@ -769,8 +808,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0',
-                1 => '1.0.0 || 2.0.0 || 3.0.0',
+                0 => '1.0.0 || 2.0.0 || 3.0.0',
+                1 => '1.0|2.0',
             ),
         ),
         'psr/simple-cache' => array(
@@ -974,6 +1013,15 @@
             'reference' => 'c6c1022351a901512170118436c764e473f6de8c',
             'dev_requirement' => true,
         ),
+        'simplesoftwareio/simple-qrcode' => array(
+            'pretty_version' => '4.2.0',
+            'version' => '4.2.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../simplesoftwareio/simple-qrcode',
+            'aliases' => array(),
+            'reference' => '916db7948ca6772d54bb617259c768c9cdc8d537',
+            'dev_requirement' => false,
+        ),
         'swiftmailer/swiftmailer' => array(
             'pretty_version' => 'v6.3.0',
             'version' => '6.3.0.0',
@@ -981,6 +1029,15 @@
             'install_path' => __DIR__ . '/../swiftmailer/swiftmailer',
             'aliases' => array(),
             'reference' => '8a5d5072dca8f48460fce2f4131fcc495eec654c',
+            'dev_requirement' => false,
+        ),
+        'symfony/browser-kit' => array(
+            'pretty_version' => 'v5.4.2',
+            'version' => '5.4.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/browser-kit',
+            'aliases' => array(),
+            'reference' => '1fb93b0aab42392aa0a742db205173b49afaf80f',
             'dev_requirement' => false,
         ),
         'symfony/console' => array(
@@ -1008,6 +1065,15 @@
             'install_path' => __DIR__ . '/../symfony/deprecation-contracts',
             'aliases' => array(),
             'reference' => '6f981ee24cf69ee7ce9736146d1c57c2780598a8',
+            'dev_requirement' => false,
+        ),
+        'symfony/dom-crawler' => array(
+            'pretty_version' => 'v5.4.2',
+            'version' => '5.4.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/dom-crawler',
+            'aliases' => array(),
+            'reference' => 'bb3bc3699779fc6d9646270789026a7e2cec7ec7',
             'dev_requirement' => false,
         ),
         'symfony/error-handler' => array(
@@ -1051,6 +1117,30 @@
             'aliases' => array(),
             'reference' => 'e77046c252be48c48a40816187ed527703c8f76c',
             'dev_requirement' => false,
+        ),
+        'symfony/http-client' => array(
+            'pretty_version' => 'v5.4.2',
+            'version' => '5.4.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/http-client',
+            'aliases' => array(),
+            'reference' => '5e344f1402584a56631c81a24ec9403e3159c790',
+            'dev_requirement' => false,
+        ),
+        'symfony/http-client-contracts' => array(
+            'pretty_version' => 'v2.5.0',
+            'version' => '2.5.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/http-client-contracts',
+            'aliases' => array(),
+            'reference' => 'ec82e57b5b714dbb69300d348bd840b345e24166',
+            'dev_requirement' => false,
+        ),
+        'symfony/http-client-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '2.4',
+            ),
         ),
         'symfony/http-foundation' => array(
             'pretty_version' => 'v5.4.2',
@@ -1281,6 +1371,15 @@
             'install_path' => __DIR__ . '/../webmozart/assert',
             'aliases' => array(),
             'reference' => '6964c76c7804814a842473e0c8fd15bab0f18e25',
+            'dev_requirement' => false,
+        ),
+        'weidner/goutte' => array(
+            'pretty_version' => '2.1.0',
+            'version' => '2.1.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../weidner/goutte',
+            'aliases' => array(),
+            'reference' => '666dc86e943920dfa0a96d2e35c135952441c4d6',
             'dev_requirement' => false,
         ),
     ),

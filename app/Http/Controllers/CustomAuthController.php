@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Session;
-use Illuminate\Support\Facades\Hash;
+use Hash;
+use Auth;
+use DB;
+
 class CustomAuthController extends Controller
 {
     public function login(){
@@ -14,6 +17,12 @@ class CustomAuthController extends Controller
     public function signup(){
         return view ("signup");
     }
+
+    public function adminlogin(){
+        return view ("adminlogin");
+    }
+
+    
 
     public function signupUser(Request $request){
 
@@ -50,10 +59,23 @@ class CustomAuthController extends Controller
         $user = User::where('email','=',$request->email)->first();
 
         if ($user) {
+
+            
+
             if (Hash::check($request->password, $user->password)){
                 $request->Session()->put('loginID',$user->id);
-                return redirect('livescore');
+                
+                if ($user->user_type == 'Administrator'){
+                    return redirect('adminhome');   
+                }
+                
+                    return redirect('homepage');
             }
+            
+            
+            
+
+            
             else {
                 return back()->with('fail', 'Wrong password !!');
             }
@@ -61,8 +83,26 @@ class CustomAuthController extends Controller
             else {
                  return back()->with('fail', 'The email is not registered');
             }
-    }
-    public function livescore(){
-        return view ("livescore");
-    }
+            
+   
+        }
+        
+        public function viewprofile(Request $request)
+           {
+               
+            $user = User::where('email','=',$request->email)->first();
+            if($user){
+                $user = User::where('loginID','=', Session::get('loginID'))->first();
+                $userSession = DB::table('users')->where('loginID','=',Session::get('loginID'))->get();
+            }
+            return view('profile',compact('user'));
+        
+         }
+
+        
+        
+        
+
+        
+
 }

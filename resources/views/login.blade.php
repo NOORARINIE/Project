@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>SportSnooze | Login</title>
+  <title>SportSnooze | Sign Up</title>
 
   <!-- favicon -->
   <link rel=icon href="assets/img/favicon.png" sizes="20x20" type="image/png">
@@ -64,7 +64,7 @@
 
     .container__child {
       width: 50%;
-      height: 100%;
+      height: 500;
       color: #fff;
     }
 
@@ -164,40 +164,44 @@
 </head>
 
 <body>
+  <!-- Navbar -->
+  <div class="w3-bar w3-black w3-card ">
 
-  <br>
-  <br>
+    <a class="w3-bar-item w3-padding-large " style="font-size:25px;">SPORTSnooze! </a>
+    
+
+    
+  </div>
+  <!-- Navbar -->
+
+  <br><br><br>
   <div class="container">
     <div class="row">
       <div class="container__child signup__thumbnail">
         <div class="thumbnail__content text-center">
           <h1>Login to your account</h1>
-          <h6 style="margin-bottom: 31px;">Login as <a href="admin_login">Admin</a></h6>
-          <br>
         </div>
       </div>
       <div class="container__child signup__form">
         <form action="{{ route('login-user') }}" method="POST">
-          @if(Session::has('success'))
-          <div class="alert alert-success"> {{Session::get('success')}}</div>
-          @endif
-          @if(Session::has('fail'))
-          <div class="alert alert-danger"> {{Session::get('fail')}}</div>
-          @endif
-          @csrf
+        @if(Session::has('success'))
+        <div class="alert alert-success"> {{Session::get('success')}}</div>
+        @endif
+        @if(Session::has('fail'))
+        <div class="alert alert-danger"> {{Session::get('fail')}}</div>
+        @endif  
+        @csrf
           <div class="form-group">
             <label for="email">Email</label>
-            <input class="form-control" type="text" name="email" id="email" value="{{old('email')}}" />
+            <input class="form-control" type="text" name="email" id="email" value="{{old('email')}}"  />
             <span class="text-danger">@error('email') {{$message}} @enderror</span>
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <input class="form-control" type="password" name="password" id="password" />
+            <input class="form-control" type="password" name="password" id="password"  />
             <span class="text-danger">@error('password') {{$message}} @enderror</span>
           </div>
-          <div>
-            <button class="btn btn--form" type="submit">Login</button>
-          </div>
+          <br>
           <div class="thumbnail__links">
             <ul style="list-style-type:none; text-align: right; padding: 21px;">
               <a style="margin: 15px;" target="_blank"><i class="fa fa-instagram"></i></a>
@@ -205,9 +209,11 @@
               <a style="margin: 15px;" target="_blank"><i class="fa fa-twitter"></i></a>
               <br>
               Don't have an account?
-              <a href="signup"> Sign up </a>
+              <a href="signup"> Sign up </a><br><br>
+              <button class="btn btn--form"style="list-style-type:none; text-align: right;" type="submit">Log In</button><br>
+              
             </ul>
-
+            
           </div>
         </form>
       </div>

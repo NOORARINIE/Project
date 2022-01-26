@@ -1,48 +1,78 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\News;
-use Illuminate\Support\Facades\DB;
+use DB;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
     public function addNews()
     {
-        return view('admin_news');
+        return view('add-news');
     }
+
     public function saveNews(Request $request)
     {
         DB::table('news')->insert([
-            'news' => $request->news,
-            'title' => $request->title,
-            'picture' => $request->picture,
+            'url'=>$request->url,
+            'innercaption'=>$request->innercaption,
+            'outercaption'=>$request->outercaption,
+            'date'=>$request->date
         ]);
-        return back()->with('success', 'News added succesfully');
+
+        return back()->with('add_news','Added succesfully');
     }
-    public function newsList()
+
+
+    public function displayPage()
     {
         $news = DB::table('news')->get();
-        return view('news-list',compact('news'));
+        return view ('newspage',compact('news'));
+    
     }
-    public function editNews($id)
+
+    public function displayTable()
     {
-        $news = DB::table('news')->where('id', $id)->first();
-        return view('edit-news', compact('news'));
+        $news = DB::table('news')->get();
+        return view ('update-news',compact('news'));
+    
     }
-    public function updateNews(Request $request)
-    {
-        DB::table('news')->where('id', $request->id)->update([
-            'news' => $request->news,
-            'title' => $request->title,
-            'picture' => $request->picture,
+
+    public function editNews($id){
+
+        $new = DB::table('news')->where('id',$id)->first();
+        return view('edit-news',compact('new'));
+
+    }
+
+    public function deleteNews($id){
+        DB::table('news')->where('id',$id)->delete();
+        return back();
+    }
+
+    public function updateNews(Request $request){
+
+        DB::table('news')->where('id',$request ->id)->update([
+            'url'=>$request->url,
+            'innercaption'=>$request->innercaption,
+            'outercaption'=>$request->outercaption,
+            'date'=>$request->date
         ]);
-        return redirect('news-list')->with('news_update', 'News updated succesfully');
+    
+        return redirect('update-news');
     }
-    public function deleteNews($id)
+
+
+
+
+
+
+    public function newspage()
     {
-        DB::table('news')->where('id', $id)->delete();
-        return back()->with('news_delete', 'News deleted succesfully');
+        return view('newspage');
     }
+
+
+    
+
 }

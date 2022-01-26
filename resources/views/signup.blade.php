@@ -64,7 +64,7 @@
 
     .container__child {
       width: 50%;
-      height: 100%;
+      height: 500;
       color: #fff;
     }
 
@@ -164,8 +164,15 @@
 </head>
 
 <body>
-  <br>
-  <br>
+  <!-- Navbar -->
+  <div class="w3-bar w3-black w3-card ">
+
+    <a class="w3-bar-item w3-padding-large " style="font-size:25px;">SPORTSnooze! </a>
+    
+    
+  </div>
+  <!-- Navbar -->
+  <br><br><br>
   <div class="container">
     <div class="row">
       <div class="container__child signup__thumbnail">
@@ -173,40 +180,37 @@
           <h1>Create your account</h1>
           <h6 style="text-align: justify; padding-left: 50px; padding-bottom: 57px;">By clicking "SIGN UP"; I agree to
             SportSnooze's Terms of Use and Privacy Policy</h6>
-
+         
         </div>
       </div>
       <div class="container__child signup__form">
-        <form class="form" action="{{ route('signup-user') }}" method="POST">
-          @if(Session::has('success'))
-          <div class="alert alert-success"> {{Session::get('success')}}</div>
-          @endif
-          @if(Session::has('fail'))
-          <div class="alert alert-danger"> {{Session::get('fail')}}</div>
-          @endif
-          @csrf
+      <form class="form" action="{{ route('signup-user') }}" method="POST">
+        @if(Session::has('success'))
+        <div class="alert alert-success"> {{Session::get('success')}}</div>
+        @endif
+        @if(Session::has('fail'))
+        <div class="alert alert-danger"> {{Session::get('fail')}}</div>
+        @endif
+        @csrf
           <div class="form-group">
             <label for="username">Name</label>
-            <input class="form-control" type="text" name="name" id="name" value="{{old('name')}}" />
+            <input class="form-control" type="text" name="name" id="name" value="{{old('name')}}"/>
             <span class="text-danger">@error('name') {{$message}} @enderror</span>
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input class="form-control" type="text" name="email" id="email" value="{{old('email')}}" />
+            <input class="form-control" type="text" name="email" id="email" value="{{old('email')}}"/>
             <span class="text-danger">@error('email') {{$message}} @enderror</span>
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <input class="form-control" type="password" name="password" id="password" value="{{old('password')}}" />
+            <input class="form-control" type="password" name="password" id="password" value="{{old('password')}}"/>
             <span class="text-danger">@error('password') {{$message}} @enderror</span>
           </div>
           <div class="form-group">
             <label for="phoneNumber">Phone Number</label>
-            <input class="form-control" type="text" name="phone" id="phone" value="{{old('phone')}}" />
+            <input class="form-control" type="text" name="phone" id="phone" value="{{old('phone')}}"/>
             <span class="text-danger">@error('phone') {{$message}} @enderror</span>
-          </div>
-          <div>
-            <button class="btn btn--form" type="submit">Register</button>
           </div>
           <div class="thumbnail__links">
             <ul style="list-style-type:none; text-align: right; padding: 21px;">
@@ -216,8 +220,13 @@
               <br>
               Already have an account?
               <a href="login"> Login here </a>
+              <br><br>
+              <button class="btn btn--form" type="submit">Register</button>
+            
             </ul>
           </div>
+          
+          
         </form>
       </div>
     </div>
