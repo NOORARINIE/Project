@@ -180,8 +180,8 @@
   <a href="/" style="padding: 8px; float: right"><button class="button1">Logout</button></a>
       <a href="homepage" class="w3-bar-item w3-button w3-padding-large " style="font-size:25px;">Home</a>
       <a href="livescore" class="w3-bar-item w3-button w3-padding-large " style="font-size:25px;">LIVE Score</a>
-      <a href="higlightspage" class="w3-bar-item w3-button w3-padding-large " style="font-size:25px;">Highlights</a>
-      <a href="newsspage" class="w3-bar-item w3-button w3-padding-large " style="font-size:25px;">News</a>
+      <a href="highlightspage" class="w3-bar-item w3-button w3-padding-large " style="font-size:25px;">Highlights</a>
+      <a href="newspage" class="w3-bar-item w3-button w3-padding-large " style="font-size:25px;">News</a>
       <a href="profile" class="w3-bar-item w3-button w3-padding-large " style="font-size:25px;">My Account</a>
 
     
