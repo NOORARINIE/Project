@@ -64,7 +64,7 @@
 
     .container__child {
       width: 50%;
-      height: 100%;
+      height: 500;
       color: #fff;
     }
 
@@ -180,7 +180,7 @@
   <a href="/" style="padding: 8px; float: right"><button class="button1">Logout</button></a>
       <a href="homepage" class="w3-bar-item w3-button w3-padding-large " style="font-size:25px;">Home</a>
       <a href="livescore" class="w3-bar-item w3-button w3-padding-large " style="font-size:25px;">LIVE Score</a>
-      <a href="userspage" class="w3-bar-item w3-button w3-padding-large " style="font-size:25px;">users</a>
+      <a href="higlightspage" class="w3-bar-item w3-button w3-padding-large " style="font-size:25px;">Highlights</a>
       <a href="newsspage" class="w3-bar-item w3-button w3-padding-large " style="font-size:25px;">News</a>
       <a href="profile" class="w3-bar-item w3-button w3-padding-large " style="font-size:25px;">My Account</a>
 
@@ -207,25 +207,20 @@
       </div>
       <div class="container__child signup__form">
         <br>
-        
-        
-        
-        
-       
-          
+
         @csrf
-        
+          
           <div class="form-group" style="padding-bottom: 20px">
-            <input class="form-control" type="text" name="name" id="name" value="{{$user->name}}"  />
+            <input class="form-control" type="text" name="name" id="name" placeholder="Qudri Ameer Bin Mohd Safiee"  />
           </div>
           <div class="form-group" style="padding-bottom: 20px">
-            <input class="form-control" type="text" name="email" id="email"  value="{{$user->email}} "/>
+            <input class="form-control" type="text" name="email" id="email"  placeholder="qudri@gmail.com"/>
           </div>
           <div class="form-group" style="padding-bottom: 20px">
-            <input class="form-control" type="password" name="password" id="password" value="{{$user->password}}"/>
+            <input class="form-control" type="password" name="password" id="password" placeholder="**************"/>
           </div>
           <div class="form-group" style="padding-bottom: 20px">
-            <input class="form-control" type="text" name="phoneNumber" id="phoneNumber" value="{{$user->phone}}"/>
+            <input class="form-control" type="text" name="phoneNumber" id="phoneNumber" placeholder="0183723621"/>
           </div>
         </form>
       

@@ -87,15 +87,11 @@ class CustomAuthController extends Controller
    
         }
         
-        public function viewprofile(Request $request)
+        public function viewprofile()
            {
-               
-            $user = User::where('email','=',$request->email)->first();
-            if($user){
-                $user = User::where('loginID','=', Session::get('loginID'))->first();
-                $userSession = DB::table('users')->where('loginID','=',Session::get('loginID'))->get();
-            }
-            return view('profile',compact('user'));
+            
+            
+            return view('profile');
         
          }
 

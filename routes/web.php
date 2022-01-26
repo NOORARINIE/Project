@@ -33,7 +33,7 @@ Route::get('/adminlogin',[CustomAuthController::class,'adminlogin']);
 Route::post('/signup-user',[CustomAuthController::class,'signupUser'])->name('signup-user');
 Route::post('/login-user',[CustomAuthController::class,'loginUser'])->name('login-user');
 Route::get('/livescore',[CustomAuthController::class,'livescore']);
-Route::get('/profile',[CustomAuthController::class,'viewprofile'])->name('view.profile');
+Route::get('/profile',[CustomAuthController::class,'viewprofile']);
 
 
 Route::get('/livescore',[LvController::class,'livescore']);
